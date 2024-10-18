@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoe Hynn Chan - Resume</title>
+    <link rel="stylesheet" href="resume.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Toggle section visibility
+            const toggles = document.querySelectorAll(".toggle-btn");
+            toggles.forEach(btn => {
+                btn.addEventListener("click", function() {
+                    const section = this.parentElement.nextElementSibling;
+                    section.style.display = section.style.display === "none" || section.style.display === "" ? "block" : "none";
+                });
+            });
+
+            // Highlight skills on hover
+            const skills = document.querySelectorAll(".skills li");
+            skills.forEach(skill => {
+                skill.addEventListener("mouseover", function() {
+                    this.style.backgroundColor = "#007bff";
+                    this.style.color = "white";
+                });
+                skill.addEventListener("mouseout", function() {
+                    this.style.backgroundColor = "";
+                    this.style.color = "";
+                });
+            });
+        });
+
+        // Smooth scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            const button = document.getElementById("backToTop");
+            button.style.display = window.pageYOffset > 300 ? "block" : "none";
+        };
+
+        // Theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #111, #333);
+            color: #e0e0e0;
+        }
+
+        .dark-mode {
+            background: linear-gradient(to bottom, #1c1c1c, #444);
+            color: #f1f1f1;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #003f7f;
+        }
+
+        .container {
+            width: 75%;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            color: #e0e0e0;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #3399ff;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+
+        #themeToggle {
+            margin: 20px;
+            padding: 10px;
+            border: none;
+            background-color: #3399ff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #themeToggle:hover {
+            background-color: #0056b3;
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #backToTop:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-button:hover {
+            background-color: #0056b3;
+        }
+    .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #fff;
+        }
+
+        .header-text p {
+            margin: 5px 0 0;
+            color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="path/to/your/image.png" alt="Profile Picture" class="profile-image">
+            <div class="header-text">
+                <h1>Hoe Hynn Chan</h1>
+                <p>Data Scientist & Aspiring Innovator</p>
+            </div>
+        </div>
+    </header>
+    <button onclick="toggleTheme()" id="themeToggle">Toggle Dark Mode</button>
+    <div class="container">
+        <div class="section">
+            <h2>About Me <button class="toggle-btn">View Details</button></h2>
+            <div class="section-content">
+                <p>I am a year 3 student aspiring to get an internship. With experience in hackathons and competitions on Kaggle, I have developed strong skills in Python for data cleaning and wrangling, as well as machine learning concepts.</p>
+                <p>Planning to get an internship for 12 weeks straight within the period from 17 November to 17 February 2025</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Experience <button class="toggle-btn">View Details</button></h2>
+            <div class="section-content">
+                <p>Participation in multiple hackathons like the EY Open Data Science challenge has enhanced my coding, problem-solving, and teamwork abilities. I have also built a task management project integrating both UI and database design.</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Education <button class="toggle-btn">View Details</button></h2>
+            <div class="section-content">
+                <p>Bachelor of Computer Science, Monash University (Expected Graduation: 2025)</p>
+                <p>Australian Matriculation, Sunway College (ATAR: 83.5)</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Skills <button class="toggle-btn">View Details</button></h2>
+            <div class="section-content">
+                <ul class="skills">
+                    <li>Python (Data Cleaning, Wrangling)</li>
+                    <li>Machine Learning (Traditional Models)</li>
+                    <li>Data Analysis, SQL, Tableau</li>
+                    <li>Team collaboration, Effective communication, Problem-solving</li>
+                    <li>Languages: English, Mandarin</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Contact <button class="toggle-btn">View Details</button></h2>
+            <div class="section-content">
+                <a href="tel:0401004609" class="contact-button"><i class="fas fa-phone"></i> Call: 0401004609 (Australia)</a>
+                <a href="tel:0165827138" class="contact-button"><i class="fas fa-phone"></i> Call: 0165827138 (Malaysia)</a>
+                <a href="mailto:chan.sam2524@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> Email: chan.sam2524@gmail.com</a>
+                <a href="https://www.linkedin.com/in/hoe-hynn-chan-31" class="contact-button" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Sam0502" class="contact-button" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </div>
+    <button onclick="scrollToTop()" id="backToTop">Back to Top</button>
+</body>
+</html>
