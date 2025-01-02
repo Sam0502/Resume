@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoe Hynn Chan - Resume</title>
-    <link rel="stylesheet" href="resume.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -46,231 +46,13 @@
             document.body.classList.toggle("dark-mode");
         }
     </script>
-    <style>
-                /* General Styles */
-        /* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-    color: #333;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode {
-    background: linear-gradient(to bottom, #2c3e50, #34495e);
-    color: #ecf0f1;
-}
-
-/* Header Styles */
-header {
-    background: #0074d9;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.header-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-
-.profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.header-text h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #fff;
-}
-
-.header-text p {
-    margin: 5px 0 0;
-    font-size: 1.2em;
-    color: #d1ecf1;
-}
-
-/* Container Styles */
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Section Styles */
-.section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: #f1f1f1;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-}
-
-.section:hover {
-    transform: translateY(-3px);
-}
-
-h2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 15px;
-    font-size: 1.8em;
-    color: #0074d9;
-    border-bottom: 2px solid #0074d9;
-    padding-bottom: 5px;
-}
-
-.toggle-btn {
-    background: none;
-    border: 1px solid #0074d9;
-    border-radius: 5px;
-    color: #0074d9;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.8em;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.toggle-btn:hover {
-    background-color: #0074d9;
-    color: white;
-}
-
-/* Skills Styles */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skills li {
-    background-color: #0074d9;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 0.9em;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.skills li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Buttons */
-button, .contact-button {
-    display: inline-block;
-    margin: 10px 5px;
-    padding: 10px 20px;
-    background-color: #0074d9;
-    color: white;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-button:hover, .contact-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-}
-
-#backToTop {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    display: none;
-    z-index: 1000;
-}
-
-/* Contact Section */
-.contact-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background-color: #f1f1f1;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.contact-item i {
-    color: #0074d9;
-    font-size: 1.5em;
-}
-
-.contact-item:hover {
-    background-color: #e2e6ea;
-    transform: translateY(-2px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-image {
-        margin-bottom: 15px;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-}
-
-
-    </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <img src="photo_Chan_Hoe_Hynn_7_March_2023.jpg" alt="Profile Picture" class="profile-image">
             <div class="header-text">
                 <h1>Hoe Hynn Chan</h1>
-                <p>Data Scientist & Aspiring Innovator</p>
+                <p>Data Analyst | Data Engineer | Software Developer</p>
             </div>
         </div>
     </header>
@@ -279,16 +61,31 @@ button:hover, .contact-button:hover {
             <h2>About Me <button class="toggle-btn">View Details</button></h2>
             <div class="section-content">
                 <p>I am a year 3 student aspiring to get an internship. With experience in hackathons and competitions on Kaggle, I have developed strong skills in Python for data cleaning and wrangling, as well as machine learning concepts.</p>
-                <p>Planning to get an internship for 12 weeks straight within the period from 17 November to 17 February 2025</p>
+                
             </div>
+        </div>
+        <div class="section">
+            <h2>Professional Summary<button class = "toggle-btn">View Details</button></h2>
+            <div class="section-content">
+                <p>Aspiring data scientist with a solid foundation in Python for data cleaning and wrangling, complemented by experience using R to explore traditional machine learning techniques and understand the mathematical foundations behind models such as K-Nearest Neighbors (KNN) and linear regression. Proficient in building predictive models and applying insights to solve real-world problems. Actively participates in hackathons, fostering a passion for learning, collaboration, and innovation. Seeking an internship to apply and further develop my skills in a professional setting. A strong team player with effective communication and interpersonal skills.</p>
+        </div>
         </div>
         <div class="section">
             <h2>Experience <button class="toggle-btn">View Details</button></h2>
             <div class="section-content">
-                <p>Participation in multiple hackathons like the EY Open Data Science challenge has enhanced my coding, problem-solving, and teamwork abilities. I have also built a task management project integrating both UI and database design.</p>
-                <p>Completed 5-Day Gen AI Intensive orgarnised by Google </p>
+                <p>Participated in multiple hackathons, including the EY Open Data Science Challenge, gaining hands-on experience in problem-solving, coding, and teamwork. These experiences broadened my knowledge of new technologies and methodologies through real-world challenges.</p>
             </div>
         </div>
+        <div class="section">
+            <h2>Projects <button class="toggle-btn">View Details</button></h2>
+            <p><strong>Task Management System:</strong> Designed and implemented a complete project integrating UI and database functionality.</p>
+            <a href="https://git.infotech.monash.edu/fit2101/fit2101-s2-2024/CL_Friday5pm_Team5" target="_blank">Task Management System</a>
+            <p><em>Note:</em> The link above might not work as it was done as a team project in Monash as a coursework.</p>
+            <p><strong>Personal Portfolio Website (This website):</strong> Developed a responsive, professional portfolio to showcase my skills and projects.</p>
+            <p><strong>Secure Storage Project Prototype:</strong> Created a secure storage solution prototype utilizing Web3.js, the Ether module, and RSA encryption to ensure data safety and integrity through blockchain technology and advanced cryptographic methods.</p>
+            <a href="https://github.com/Sam0502/SecureStorage" target="_blank">Secure Storage Project</a>
+            </div>
+        
         <div class="section">
             <h2>Education <button class="toggle-btn">View Details</button></h2>
             <div class="section-content">
@@ -300,31 +97,42 @@ button:hover, .contact-button:hover {
                     <li>Algorithm and Data Structure</li>
                     <li>Theory of data modelling</li>
                     <li>Database</li>
+                </ul>
             </div>
         </div>
         <div class="section">
             <h2>Skills <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
                 <ul class="skills">
                     <li>Python (Data Cleaning, Wrangling)</li>
                     <li>Machine Learning (Traditional Models)</li>
                     <li>Data Analysis, SQL, Tableau</li>
                     <li>Team collaboration, Effective communication, Problem-solving</li>
-                    <li>Languages: English, Mandarin</li>
+                    <li>Languages: English(CEFR: B2), Mandarin</li>
                 </ul>
             </div>
-        </div>
-        <div class="section">
-            <h2>Contact <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
-                <a href="tel:0401004609" class="contact-button"><i class="fas fa-phone"></i> Call: 0401004609 (Australia)</a>
-                <a href="tel:0165827138" class="contact-button"><i class="fas fa-phone"></i> Call: 0165827138 (Malaysia)</a>
-                <a href="mailto:chan.sam2524@gmail.com" class="contact-button"><i class="fas fa-envelope"></i> Email: chan.sam2524@gmail.com</a>
-                <a href="https://www.linkedin.com/in/hoe-hynn-chan-310014255" class="contact-button" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/Sam0502" class="contact-button" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <div class="section">
+                <h2>Contact <button class="toggle-btn">View Details</button></h2>
+                
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:0401004609">Call: 0401004609 (Australia)</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:chan.sam2524@gmail.com">Email: chan.sam2524@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/hoe-hynn-chan-310014255" target="_blank" aria-label="LinkedIn Profile">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Sam0502" target="_blank">GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <button onclick="scrollToTop()" id="backToTop">Back to Top</button>
-</body>
+
+            <button onclick="scrollToTop()" id="backToTop">Top</button>
+    </body>
 </html>
