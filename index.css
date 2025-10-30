@@ -50,6 +50,22 @@ header {
     color: #d1ecf1;
 }
 
+.contact-header {
+    font-size: 0.95em !important;
+    margin-top: 10px !important;
+}
+
+.contact-header a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-header a:hover {
+    color: #fff9e6;
+    text-decoration: underline;
+}
+
 /* Container Styles */
 .container {
     max-width: 1200px;
@@ -152,6 +168,52 @@ button, .contact-button {
 button:hover, .contact-button:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
+}
+
+/* Project Items */
+.project-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #fff;
+    border-left: 4px solid #0074d9;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(5px);
+}
+
+.project-item h3 {
+    margin: 0 0 10px;
+    color: #0074d9;
+    font-size: 1.2em;
+}
+
+.project-item p {
+    margin: 10px 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #0074d9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #backToTop {
