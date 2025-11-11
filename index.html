@@ -41,6 +41,38 @@
             button.style.display = window.pageYOffset > 300 ? "block" : "none";
         };
 
+        // Typing effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const typingEffect = document.getElementById('typing-effect');
+            if (typingEffect) {
+                const roles = ["Business Intelligence Analyst", "Data Analyst", "Data Engineer", "Software Developer"];
+                let roleIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+
+                function type() {
+                    const currentRole = roles[roleIndex];
+                    if (isDeleting) {
+                        typingEffect.textContent = currentRole.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        typingEffect.textContent = currentRole.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    if (!isDeleting && charIndex === currentRole.length) {
+                        setTimeout(() => isDeleting = true, 2000);
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        roleIndex = (roleIndex + 1) % roles.length;
+                    }
+
+                    setTimeout(type, isDeleting ? 100 : 200);
+                }
+                type();
+            }
+        });
+
         // Theme toggle
         function toggleTheme() {
             document.body.classList.toggle("dark-mode");
@@ -52,7 +84,7 @@
         <div class="header-content">
             <div class="header-text">
                 <h1>Sam Chan</h1>
-                <p>Business Intelligence & Data Analyst</p>
+                <p class="subtitle"><span id="typing-effect"></span></p>
                 <p class="contact-header">+61 401 004 609 | Melbourne, Australia | <a href="mailto:chan.sam2524@gmail.com">chan.sam2524@gmail.com</a></p>
             </div>
         </div>
@@ -119,6 +151,15 @@
                     <li>Database</li>
                     <li>Statistical Analysis</li>
                     <li>Predictive Modelling</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Certifications <button class="toggle-btn">View Details</button></h2>
+            <div class="section-content">
+                <ul class="skills">
+                    <li>Build and Ship Cloud-Native Python Apps</li>
+                    <li>Launch Your First Full-Stack App on AWS</li>
                 </ul>
             </div>
         </div>
