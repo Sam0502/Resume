@@ -1,202 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoe Hynn Chan - Resume</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sam Chan — Resume</title>
+    <meta name="description" content="Resume and portfolio of Sam Chan — Data Science & Software Development">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Toggle section visibility
-            const toggles = document.querySelectorAll(".toggle-btn");
-            toggles.forEach(btn => {
-                btn.addEventListener("click", function() {
-                    const section = this.parentElement.nextElementSibling;
-                    section.style.display = section.style.display === "none" || section.style.display === "" ? "block" : "none";
-                });
-            });
-
-            // Highlight skills on hover
-            const skills = document.querySelectorAll(".skills li");
-            skills.forEach(skill => {
-                skill.addEventListener("mouseover", function() {
-                    this.style.backgroundColor = "#007bff";
-                    this.style.color = "white";
-                });
-                skill.addEventListener("mouseout", function() {
-                    this.style.backgroundColor = "";
-                    this.style.color = "";
-                });
-            });
-        });
-
-        // Smooth scroll to top
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        window.onscroll = function() {
-            const button = document.getElementById("backToTop");
-            button.style.display = window.pageYOffset > 300 ? "block" : "none";
-        };
-
-        // Typing effect
-        document.addEventListener('DOMContentLoaded', function() {
-            const typingEffect = document.getElementById('typing-effect');
-            if (typingEffect) {
-                const roles = ["Business Intelligence Analyst", "Data Analyst", "Data Engineer", "Software Developer"];
-                let roleIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
-
-                function type() {
-                    const currentRole = roles[roleIndex];
-                    if (isDeleting) {
-                        typingEffect.textContent = currentRole.substring(0, charIndex - 1);
-                        charIndex--;
-                    } else {
-                        typingEffect.textContent = currentRole.substring(0, charIndex + 1);
-                        charIndex++;
-                    }
-
-                    if (!isDeleting && charIndex === currentRole.length) {
-                        setTimeout(() => isDeleting = true, 2000);
-                    } else if (isDeleting && charIndex === 0) {
-                        isDeleting = false;
-                        roleIndex = (roleIndex + 1) % roles.length;
-                    }
-
-                    setTimeout(type, isDeleting ? 100 : 200);
-                }
-                type();
-            }
-        });
-
-        // Theme toggle
-        function toggleTheme() {
-            document.body.classList.toggle("dark-mode");
-        }
-    </script>
+    <meta name="theme-color" content="#0b6efd">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Sam Chan</h1>
-                <p class="subtitle"><span id="typing-effect"></span></p>
-                <p class="contact-header">+61 401 004 609 | Melbourne, Australia | <a href="mailto:chan.sam2524@gmail.com">chan.sam2524@gmail.com</a></p>
+    <nav class="topbar">
+        <div class="nav-inner">
+            <div class="brand">Sam Chan's Resume</div>
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" aria-pressed="false" title="Toggle theme"><i class="fas fa-moon" aria-hidden="true"></i><span class="sr-only">Toggle theme</span></button>
+                <a href="template/resume.html" class="download-btn" title="Printable resume (opens template)">Printable</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1 class="name">Sam Chan</h1>
+                <p class="role"> <span id="typing-effect"></span></p>
+                <p class="meta">+61 401 004 609 • Melbourne, Australia • <a href="mailto:chan.sam2524@gmail.com">chan.sam2524@gmail.com</a></p>
+                <div class="hero-ctas">
+                    <a class="cta" href="#projects">Projects</a>
+                    <a class="cta ghost" href="#contact">Contact</a>
+                </div>
+                <div class="socials">
+                    <a class="social-btn" href="https://www.linkedin.com/in/hoe-hynn-chan-310014255" target="_blank" rel="noopener" aria-label="LinkedIn — Sam Chan" title="LinkedIn — Sam Chan"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a class="social-btn" href="https://github.com/Sam0502" target="_blank" rel="noopener" aria-label="GitHub — Sam Chan" title="GitHub — Sam Chan"><i class="fab fa-github" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="card-content">
+                    <h3>About</h3>
+                    <p>I am a Year 3 Computer Science student specialising in Data Science. Experienced with Python, SQL, BI tools, and building end-to-end data solutions. Seeking internship opportunities.</p>
+                </div>
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="section">
-            <h2>About Me <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
-                <p>I am a year 3 student aspiring to get an internship. With experience in hackathons and competitions on Kaggle, I have developed strong skills in Python for data cleaning and wrangling, as well as machine learning concepts.</p>
-                
+
+    <main class="site-container">
+        <section id="summary" class="card">
+            <div class="card-head"><h2>Professional Summary</h2><button class="toggle-btn">Toggle</button></div>
+            <div class="card-body">
+                <p>Detail-oriented Data Analyst skilled in transforming raw data into actionable insights. Experienced in statistical analysis, predictive modelling, BI reporting, and risk evaluation across logistics, retail, and cybersecurity domains.</p>
             </div>
-        </div>
-        <div class="section">
-            <h2>Professional Summary<button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
-                <p>Detail-oriented Data Analyst skilled in transforming raw data into actionable insights. Experienced in statistical analysis, predictive modelling, BI reporting, and risk evaluation across domains including financial inclusion, logistics, and cybersecurity.</p>
-                <p>Adept at using Python, R, SQL, and visualization tools to uncover trends, build dashboards, and drive decision-making. Strong foundation in research, experimentation, and storytelling through data. Have experience on data engineering and able to link it with business intelligence reporting.</p>
+        </section>
+
+        <section id="experience" class="card">
+            <div class="card-head"><h2>Professional Experience</h2><button class="toggle-btn">Toggle</button></div>
+            <div class="card-body">
+                <article>
+                    <h3>MYOB's Protégé Developer Virtual Experience</h3>
+                    <p><strong>Key Achievement:</strong> Built a cloud-native Python app and delivered analytics & dashboards.</p>
+                    <ul>
+                        <li>Implemented data ingestion pipeline (FTP -> DB) and ETL routines.</li>
+                        <li>Built visual analytics and stakeholder-ready dashboards.</li>
+                        <li>Used FastAPI, Docker and JS for full-stack components.</li>
+                    </ul>
+                </article>
             </div>
-        </div>
-        <div class="section">
-            <h2>Professional Experience <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
-                <h3>MYOB's Protégé Developer Virtual Experience</h3>
-                <p><strong>Key Achievement:</strong> Build and Ship Cloud-Native Python Apps | Launch Your First Full-Stack App on AWS</p>
-                <ul>
-                    <li>Built a data pipeline that accesses BOM FTP server and ingests data into a database</li>
-                    <li>Provided comprehensive data analysis with visualizations for different weather metrics</li>
-                    <li>Used FastAPI and JavaScript to build backend and frontend, Docker for containerization</li>
-                    <li>Collaborated with team to deliver risk insights to stakeholders through dashboards and reports</li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Projects <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
-                <div class="project-item">
-                    <h3>Retail Sales Dashboard</h3>
-                    <p>Built Tableau dashboards showing sales velocity, customer segmentation, and revenue patterns using transaction data. Applied cohort and time-series analysis to identify high-value product combinations. Integrated visual storytelling into executive reports and recommendations.</p>
-                    <a href="https://tinyurl.com/4abvyekn" target="_blank" rel="noopener" class="project-link">View Dashboard</a>
+        </section>
+
+        <section id="projects" class="card grid">
+            <div class="card-head"><h2>Projects</h2><button class="toggle-btn">Toggle</button></div>
+            <div class="card-body projects">
+                <div class="project">
+                    <h4>Retail Sales Dashboard</h4>
+                    <p>Tableau dashboards with cohort and time-series analysis to surface high-value products and customer segments.</p>
+                    <a class="project-link" href="https://tinyurl.com/4abvyekn" target="_blank" rel="noopener">View Dashboard</a>
                 </div>
-                <div class="project-item">
-                    <h3>Real-Time Weather Insights Dashboard</h3>
-                    <p>Interactive dashboard with multi-station analysis, extreme weather detection, and advanced statistical techniques. Five interactive Chart.js visualizations delivering clear, responsive, and actionable weather trends. Production-ready, open-source, well-documented, and built for extensibility.</p>
-                    <a href="https://tinyurl.com/3cuy6jts" target="_blank" rel="noopener" class="project-link">View Dashboard</a>
+                <div class="project">
+                    <h4>Real-Time Weather Insights</h4>
+                    <p>Production-ready dashboard with multi-station analysis and Chart.js visualizations for weather intelligence.</p>
+                    <a class="project-link" href="https://tinyurl.com/3cuy6jts" target="_blank" rel="noopener">View Dashboard</a>
                 </div>
-                <div class="project-item">
-                    <h3>Capstone Project</h3>
-                    <p>Bachelor of Computer Science capstone project at Monash University with specialization in Data Science. Demonstrated expertise in building end-to-end data solutions with real-world applications.</p>
+                <div class="project">
+                    <h4>Capstone Project</h4>
+                    <p>BSc Capstone at Monash — end-to-end data solution with reproducible pipelines and clear documentation.</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="section">
-            <h2>Education <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
-                <p><strong>Bachelor of Computer Science</strong></p>
-                <p>Monash University, Australia (Expected Graduation: 2025)</p>
+        </section>
+
+        <section id="education" class="card two-col">
+            <div>
+                <h2>Education</h2>
+                <p><strong>Bachelor of Computer Science</strong> — Monash University (Expected 2025)</p>
                 <p><strong>Specialisation:</strong> Data Science</p>
-                <p>Relevant Coursework:</p>
-                <ul>
-                    <li>Introduction to Data Science</li>
-                    <li>Algorithm and Data Structure</li>
-                    <li>Theory of Data Modelling</li>
-                    <li>Database</li>
-                    <li>Statistical Analysis</li>
-                    <li>Predictive Modelling</li>
-                </ul>
             </div>
-        </div>
-        <div class="section">
-            <h2>Certifications <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
+            <div>
+                <h2>Certifications</h2>
                 <ul class="skills">
                     <li>Build and Ship Cloud-Native Python Apps</li>
                     <li>Launch Your First Full-Stack App on AWS</li>
                 </ul>
             </div>
-        </div>
-        <div class="section">
-            <h2>Key Competencies <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content">
-                <ul class="skills">
-                    <li><strong>Statistical Analysis & Risk Evaluation:</strong> Expert in uncovering trends and anomalies using statistical models, risk scoring, and network analysis</li>
-                    <li><strong>Technical Stack:</strong> Fluent in Python, R, SQL, and BI tools to deliver scalable, end-to-end data solutions</li>
-                    <li><strong>Data Visualization & Storytelling:</strong> Translate complex data into clear insights and visualizations for strategic decision-making</li>
-                    <li><strong>Domains:</strong> Financial inclusion, logistics, cybersecurity, retail analytics, and weather intelligence</li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Contact <button class="toggle-btn">View Details</button></h2>
-            <div class="section-content contact-section">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:0401004609">Call: 0401004609 (Australia)</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:chan.sam2524@gmail.com">Email: chan.sam2524@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/hoe-hynn-chan-310014255" target="_blank" rel="noopener" aria-label="LinkedIn Profile">LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/Sam0502" target="_blank" rel="noopener">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <button onclick="scrollToTop()" id="backToTop">Back to Top</button>
-    </body>
+        <section id="competencies" class="card">
+            <h2>Key Competencies</h2>
+            <ul class="bullets">
+                <li><strong>Statistical Analysis & Risk Evaluation:</strong> Trend detection, anomaly scoring.</li>
+                <li><strong>Technical Stack:</strong> Python, R, SQL, FastAPI, Docker, BI tools.</li>
+                <li><strong>Visualization:</strong> Tableau, Chart.js, dashboard storytelling.</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="card">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:0401004609">+61 401 004 609</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:chan.sam2524@gmail.com">chan.sam2524@gmail.com</a></div>
+                <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/hoe-hynn-chan-310014255" target="_blank" rel="noopener">LinkedIn</a></div>
+                <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/Sam0502" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="backToTop" class="fab" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        // Toggle section visibility
+        document.addEventListener('click', function (e) {
+            if (e.target.matches('.toggle-btn')) {
+                const head = e.target.closest('.card-head');
+                const body = head ? head.nextElementSibling : null;
+                if (body) body.style.display = body.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+
+        // Typing effect
+        (function typing() {
+            const el = document.getElementById('typing-effect');
+            if (!el) return;
+            const roles = ['Business Intelligence Analyst', 'Data Analyst', 'Data Engineer', 'Software Developer'];
+            let ri = 0, ci = 0, del = 150, deleting = false;
+            function tick() {
+                const full = roles[ri];
+                el.textContent = full.substring(0, ci);
+                if (!deleting) ci++; else ci--;
+                if (!deleting && ci === full.length) { deleting = true; setTimeout(tick, 1200); return; }
+                if (deleting && ci === 0) { deleting = false; ri = (ri+1)%roles.length; }
+                setTimeout(tick, deleting ? 60 : del);
+            }
+            tick();
+        })();
+
+        // Theme toggle + persistence (with animated icon)
+            const themeToggle = document.getElementById('themeToggle');
+            function updateThemeIcon() {
+                const icon = themeToggle.querySelector('i');
+                const isDark = document.documentElement.classList.contains('dark');
+                if (isDark) {
+                    icon.className = 'fas fa-sun';
+                    themeToggle.setAttribute('aria-pressed','true');
+                    themeToggle.title = 'Switch to light theme';
+                } else {
+                    icon.className = 'fas fa-moon';
+                    themeToggle.setAttribute('aria-pressed','false');
+                    themeToggle.title = 'Switch to dark theme';
+                }
+                // pulse animation
+                icon.classList.add('icon-bounce');
+                setTimeout(()=> icon.classList.remove('icon-bounce'), 550);
+            }
+
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                updateThemeIcon();
+            });
+            // initialize
+            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+            updateThemeIcon();
+
+        // Back to top
+        const back = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+                back.style.opacity = window.scrollY > 300 ? '1' : '0';
+            });
+            back.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+        // Improve social/focus interactivity: keyboard support (enter/space) for .social-btn
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.setAttribute('tabindex','0');
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+            });
+        });
+    </script>
+</body>
 </html>
