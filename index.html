@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Sam Chan — Resume</title>
-    <meta name="description" content="Resume and portfolio of Sam Chan — Data Science & Software Development">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index.css">
-    <meta name="theme-color" content="#0b6efd">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Sam Chan — Resume</title>
+        <meta name="description" content="Resume and portfolio of Sam Chan — Data Science & Software Development">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="index.css">
+        <meta name="theme-color" content="#0b6efd">
+        <style>
+            /* small compatibility tweaks so merged layout reads well */
+            .hero { padding-top: 56px; }
+        </style>
 </head>
 <body>
     <nav class="topbar">
         <div class="nav-inner">
-            <div class="brand">Sam Chan's Resume</div>
+            <div class="brand">Sam Chan</div>
             <div class="nav-actions">
                 <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" aria-pressed="false" title="Toggle theme"><i class="fas fa-moon" aria-hidden="true"></i><span class="sr-only">Toggle theme</span></button>
                 <a href="template/resume.html" class="download-btn" title="Printable resume (opens template)">Printable</a>
@@ -28,8 +32,8 @@
         <div class="hero-inner">
             <div class="hero-text">
                 <h1 class="name">Sam Chan</h1>
-                <p class="role"> <span id="typing-effect"></span></p>
-                <p class="meta">+61 401 004 609 • Melbourne, Australia • <a href="mailto:chan.sam2524@gmail.com">chan.sam2524@gmail.com</a></p>
+                <p class="role"> <span id="typing-effect">Business Intelligence Analyst</span></p>
+                <p class="meta">Melbourne, Australia • Subang Jaya, Malaysia <a href="mailto:chan.sam2524@gmail.com">chan.sam2524@gmail.com</a></p>
                 <div class="hero-ctas">
                     <a class="cta" href="#projects">Projects</a>
                     <a class="cta ghost" href="#contact">Contact</a>
@@ -39,12 +43,12 @@
                     <a class="social-btn" href="https://github.com/Sam0502" target="_blank" rel="noopener" aria-label="GitHub — Sam Chan" title="GitHub — Sam Chan"><i class="fab fa-github" aria-hidden="true"></i></a>
                 </div>
             </div>
-            <div class="hero-card">
+            <aside class="hero-card">
                 <div class="card-content">
                     <h3>About</h3>
                     <p>I am a Year 3 Computer Science student specialising in Data Science. Experienced with Python, SQL, BI tools, and building end-to-end data solutions. Seeking internship opportunities.</p>
                 </div>
-            </div>
+            </aside>
         </div>
     </header>
 
@@ -52,21 +56,16 @@
         <section id="summary" class="card">
             <div class="card-head"><h2>Professional Summary</h2><button class="toggle-btn">Toggle</button></div>
             <div class="card-body">
-                <p>Detail-oriented Data Analyst skilled in transforming raw data into actionable insights. Experienced in statistical analysis, predictive modelling, BI reporting, and risk evaluation across logistics, retail, and cybersecurity domains.</p>
+                <p>Detail-oriented Data Analyst skilled in transforming raw data into actionable insights. Experienced in statistical analysis, predictive modelling, BI reporting, and risk evaluation across logistics, retail, and cybersecurity domains. Proficient in Python, R, SQL, FastAPI and visualization tools.</p>
             </div>
         </section>
 
         <section id="experience" class="card">
-            <div class="card-head"><h2>Professional Experience</h2><button class="toggle-btn">Toggle</button></div>
+            <div class="card-head"><h2>Experience</h2><button class="toggle-btn">Toggle</button></div>
             <div class="card-body">
                 <article>
                     <h3>MYOB's Protégé Developer Virtual Experience</h3>
-                    <p><strong>Key Achievement:</strong> Built a cloud-native Python app and delivered analytics & dashboards.</p>
-                    <ul>
-                        <li>Implemented data ingestion pipeline (FTP -> DB) and ETL routines.</li>
-                        <li>Built visual analytics and stakeholder-ready dashboards.</li>
-                        <li>Used FastAPI, Docker and JS for full-stack components.</li>
-                    </ul>
+                    <p><strong>Key Achievement:</strong> Built cloud-native Python apps, ETL pipelines, and dashboards. Used FastAPI, Docker and front-end visualisations.</p>
                 </article>
             </div>
         </section>
@@ -81,7 +80,7 @@
                 </div>
                 <div class="project">
                     <h4>Real-Time Weather Insights</h4>
-                    <p>Production-ready dashboard with multi-station analysis and Chart.js visualizations for weather intelligence.</p>
+                    <p>Interactive dashboard with multi-station analysis and Chart.js visualizations for weather intelligence.</p>
                     <a class="project-link" href="https://tinyurl.com/3cuy6jts" target="_blank" rel="noopener">View Dashboard</a>
                 </div>
                 <div class="project">
@@ -118,7 +117,7 @@
         <section id="contact" class="card">
             <h2>Contact</h2>
             <div class="contact-grid">
-                <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:0401004609">+61 401 004 609</a></div>
+                <!-- <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:0401004609">+61 401 004 609</a></div> -->
                 <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:chan.sam2524@gmail.com">chan.sam2524@gmail.com</a></div>
                 <div class="contact-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/hoe-hynn-chan-310014255" target="_blank" rel="noopener">LinkedIn</a></div>
                 <div class="contact-item"><i class="fab fa-github"></i><a href="https://github.com/Sam0502" target="_blank" rel="noopener">GitHub</a></div>
@@ -139,7 +138,7 @@
             }
         });
 
-        // Typing effect
+        // Typing effect (keeps simple fallback text when JS disabled)
         (function typing() {
             const el = document.getElementById('typing-effect');
             if (!el) return;
@@ -157,41 +156,38 @@
         })();
 
         // Theme toggle + persistence (with animated icon)
-            const themeToggle = document.getElementById('themeToggle');
-            function updateThemeIcon() {
-                const icon = themeToggle.querySelector('i');
-                const isDark = document.documentElement.classList.contains('dark');
-                if (isDark) {
-                    icon.className = 'fas fa-sun';
-                    themeToggle.setAttribute('aria-pressed','true');
-                    themeToggle.title = 'Switch to light theme';
-                } else {
-                    icon.className = 'fas fa-moon';
-                    themeToggle.setAttribute('aria-pressed','false');
-                    themeToggle.title = 'Switch to dark theme';
-                }
-                // pulse animation
-                icon.classList.add('icon-bounce');
-                setTimeout(()=> icon.classList.remove('icon-bounce'), 550);
+        const themeToggle = document.getElementById('themeToggle');
+        function updateThemeIcon() {
+            const icon = themeToggle.querySelector('i');
+            const isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+                icon.className = 'fas fa-sun';
+                themeToggle.setAttribute('aria-pressed','true');
+                themeToggle.title = 'Switch to light theme';
+            } else {
+                icon.className = 'fas fa-moon';
+                themeToggle.setAttribute('aria-pressed','false');
+                themeToggle.title = 'Switch to dark theme';
             }
-
-            themeToggle.addEventListener('click', () => {
-                document.documentElement.classList.toggle('dark');
-                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-                updateThemeIcon();
-            });
-            // initialize
-            if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+            icon.classList.add('icon-bounce');
+            setTimeout(()=> icon.classList.remove('icon-bounce'), 550);
+        }
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
             updateThemeIcon();
+        });
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+        updateThemeIcon();
 
         // Back to top
         const back = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-                back.style.opacity = window.scrollY > 300 ? '1' : '0';
-            });
-            back.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+            back.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+        back.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
-        // Improve social/focus interactivity: keyboard support (enter/space) for .social-btn
+        // keyboard support for social buttons
         document.querySelectorAll('.social-btn').forEach(btn => {
             btn.setAttribute('tabindex','0');
             btn.addEventListener('keydown', (e) => {

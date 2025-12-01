@@ -1,5 +1,9 @@
 :root{
   --bg-1: linear-gradient(135deg,#e6f0ff 0%, #ffffff 50%);
+  /* animated gradient color stops (used for smooth shifting background) */
+  --g1: #e6f0ff;
+  --g2: #ffffff;
+  --g3: #f0f7ff;
   --muted: #6b7280;
   --accent: #0b6efd;
   --card: rgba(255,255,255,0.95);
@@ -14,10 +18,27 @@ html,body{height:100%}
 body{
   font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   margin:0;
+  /* fallback static gradient for older browsers */
   background:var(--bg-1);
+  /* layered animated gradient (modern browsers) */
+  background-image: linear-gradient(120deg, var(--g1), var(--g2) 45%, var(--g3) 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+}
+
+/* Gradient animation that shifts background-position for a subtle moving effect */
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+  body{animation: none;background-size: auto}
 }
 
 /* Topbar */
@@ -93,6 +114,10 @@ body{
 /* Dark theme */
 :root.dark{
   --bg-1: linear-gradient(135deg,#071126 0%, #081229 50%);
+  /* dark-mode animated gradient stops */
+  --g1: #071126;
+  --g2: #081229;
+  --g3: #0b1b2f;
   --muted:#9aa4b2;
   --accent:#5ab0ff;
   --card: rgba(6,12,22,0.6);
