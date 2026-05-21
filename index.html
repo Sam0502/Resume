@@ -25,7 +25,7 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <a class="print-btn" href="template/resume.html">Printable CV</a>
+      <!-- <button class="print-btn" id="downloadPdf" aria-label="Download CV as PDF">Download PDF</button> -->
       <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" aria-pressed="false">
         <i class="fa-solid fa-moon" aria-hidden="true"></i>
       </button>
@@ -37,7 +37,7 @@
       <p class="eyebrow">Data Science + Software Development</p>
       <h1>Building data products people can actually use.</h1>
       <p class="hero-sub">
-        I am Sam Chan, a Computer Science graduate specializing in Data Science, focused on turning raw data into high-impact dashboards, APIs, and automation workflows.
+          I am a Data Analyst and Data Science student with a strong interest in transforming raw data into meaningful insights that support better decision-making. I have experience in statistical analysis, dashboard development, predictive modelling, and data visualization using tools such as Python, R, SQL, and Tableau. I enjoy solving complex problems, building scalable data solutions, and combining technical knowledge with business understanding to deliver impactful results.
       </p>
       <p class="typed-line">Current focus: <span id="typingText">Business Intelligence Analyst</span><span class="caret" aria-hidden="true">|</span></p>
       <div class="hero-cta">
@@ -45,7 +45,7 @@
         <a class="btn btn-ghost" href="#contact">Get In Touch</a>
       </div>
       <div class="hero-meta">
-        <span><i class="fa-solid fa-location-dot"></i> Melbourne, Australia / Subang Jaya, Malaysia</span>
+        <span><i class="fa-solid fa-location-dot"></i> Subang Jaya, Malaysia</span>
         <span><i class="fa-solid fa-envelope"></i> chan.sam2524@gmail.com</span>
       </div>
     </div>
@@ -73,7 +73,7 @@
     <section id="summary" class="card reveal">
       <h2>Professional Summary</h2>
       <p>
-        Detail-oriented Data Analyst with experience across logistics, retail, and cybersecurity datasets. Strong foundation in statistical analysis, predictive modeling, BI reporting, and backend development for data applications.
+        Detail-oriented and analytically driven Data Analyst with a strong foundation in data science, business intelligence, and data engineering. Experienced in transforming complex datasets into actionable insights through statistical analysis, predictive modelling, dashboard development, and risk evaluation across domains including logistics, cybersecurity, and financial inclusion. Proficient in Python, R, SQL, Tableau, and cloud-native technologies, with hands-on experience building scalable data pipelines, interactive visualizations, and end-to-end analytical solutions. Adept at translating technical findings into strategic business recommendations while collaborating effectively in cross-functional and research-driven environments.
       </p>
     </section>
 
@@ -132,7 +132,7 @@
           <h3>Capstone Data Solution</h3>
           <p>End-to-end university capstone pipeline with reproducible data preparation and reporting workflows.</p>
           <div class="project-actions">
-            <span class="muted">Monash University</span>
+            <a href="https://github.com/harsh-monash/fit3164-ds21/tree/Sam_dev" target="_blank" rel="noopener">Open Repository</a>
             <button class="link-btn" data-project="capstone">Details</button>
           </div>
         </article>
@@ -141,7 +141,7 @@
           <h3>A2A Stock Insight System</h3>
           <p>A2A-based platform for stock ticker insights with interactive charts, pattern recognition rules, and backend technical analysis services.</p>
           <div class="project-actions">
-            <span class="muted">A2A Architecture</span>
+            <a href="https://github.com/Sam0502/gemini3_hackathon" target="_blank" rel="noopener">Tap for request</a>
             <button class="link-btn" data-project="a2a-stock">Details</button>
           </div>
         </article>
@@ -443,6 +443,118 @@
     }, { threshold: 0.55 });
 
     sections.forEach((section) => sectionObserver.observe(section));
+
+    // PDF download: load html2pdf dynamically and generate PDF of the page
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = src;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error('Failed to load ' + src));
+        document.head.appendChild(s);
+      });
+    }
+
+    const downloadBtn = document.getElementById('downloadPdf');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', async () => {
+        if (!window.html2pdf) {
+          try {
+            await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js');
+          } catch (e) {
+            alert('Could not load PDF generator. Please try again.');
+            return;
+          }
+        }
+
+        const opt = {
+          margin: 0.4,
+          filename: 'Sam_Chan_CV.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Build a minimal, print-friendly wrapper containing only text and numbers
+        const wrapper = document.createElement('div');
+
+        // Title / Name
+        const siteName = document.querySelector('.brand')?.textContent || document.querySelector('header h1')?.textContent || 'Sam Chan';
+        const titleEl = document.createElement('h1');
+        titleEl.textContent = siteName.trim();
+        wrapper.appendChild(titleEl);
+
+        // Contact meta
+        const heroMeta = document.querySelector('.hero-meta')?.innerText;
+        if (heroMeta) {
+          const contactEl = document.createElement('p');
+          contactEl.textContent = heroMeta.trim();
+          wrapper.appendChild(contactEl);
+        }
+
+        // Summary
+        const summarySection = document.getElementById('summary');
+        if (summarySection) {
+          const h2 = document.createElement('h2'); h2.textContent = 'Professional Summary'; wrapper.appendChild(h2);
+          const p = summarySection.querySelector('p')?.innerText.trim();
+          if (p) { const pEl = document.createElement('p'); pEl.textContent = p; wrapper.appendChild(pEl); }
+        }
+
+        // Stats (numbers)
+        const statEls = document.querySelectorAll('.stat-number');
+        if (statEls.length) {
+          const h2s = document.createElement('h2'); h2s.textContent = 'Stats'; wrapper.appendChild(h2s);
+          const ul = document.createElement('ul');
+          statEls.forEach((el) => {
+            const label = el.parentElement.querySelector('.stat-label')?.textContent || '';
+            const num = el.dataset.target || el.textContent || '';
+            const li = document.createElement('li');
+            li.textContent = `${label.trim()}: ${num}`.trim();
+            ul.appendChild(li);
+          });
+          wrapper.appendChild(ul);
+        }
+
+        // Skills (name + percent)
+        const skillItems = document.querySelectorAll('.skill-item');
+        if (skillItems.length) {
+          const h2k = document.createElement('h2'); h2k.textContent = 'Skills'; wrapper.appendChild(h2k);
+          const ul2 = document.createElement('ul');
+          skillItems.forEach((si) => {
+            const name = si.querySelector('.skill-row span')?.textContent || '';
+            const pct = si.querySelector('.skill-row span + span')?.textContent || si.querySelector('.skill-track span')?.dataset.width;
+            const li = document.createElement('li');
+            li.textContent = pct ? `${name.trim()} — ${pct}` : name.trim();
+            ul2.appendChild(li);
+          });
+          wrapper.appendChild(ul2);
+        }
+
+        // Projects (title + short desc)
+        const projects = document.querySelectorAll('.project-card');
+        if (projects.length) {
+          const h2p = document.createElement('h2'); h2p.textContent = 'Projects'; wrapper.appendChild(h2p);
+          projects.forEach((pc) => {
+            const t = pc.querySelector('h3')?.textContent || '';
+            const d = pc.querySelector('p')?.textContent || '';
+            const p = document.createElement('p');
+            p.textContent = t ? `${t} — ${d}` : d;
+            wrapper.appendChild(p);
+          });
+        }
+
+        // Contact section (detailed)
+        const contactSec = document.getElementById('contact');
+        if (contactSec) {
+          const h2c = document.createElement('h2'); h2c.textContent = 'Contact'; wrapper.appendChild(h2c);
+          const contactText = Array.from(contactSec.querySelectorAll('.contact-card, a, strong'))
+            .map(n => n.innerText && n.innerText.trim()).filter(Boolean).join(' | ');
+          if (contactText) { const c = document.createElement('p'); c.textContent = contactText; wrapper.appendChild(c); }
+        }
+
+        html2pdf().set(opt).from(wrapper).save();
+      });
+    }
   </script>
 </body>
 </html>
