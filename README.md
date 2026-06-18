@@ -1,5 +1,3 @@
-Hoe Hynn Chan — Interactive Resume
-
 This repository contains a small static site that serves as an interactive resume and portfolio for Hoe Hynn Chan. The site includes a main interactive resume (`index.html`) and a printable CV export (PDF) generated from the page.
 
 Quick start
